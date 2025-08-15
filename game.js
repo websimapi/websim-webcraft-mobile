@@ -145,7 +145,7 @@ class MinecraftClone {
         document.addEventListener('keyup', (e) => this.keys[e.code] = false);
 
         // Mobile joystick
-        if (window.innerWidth <= 768) {
+        if (window.innerWidth <= 768 && window.nipplejs) {
             this.joystick = window.nipplejs.create({
                 zone: document.getElementById('joystick'),
                 mode: 'static',
@@ -180,8 +180,8 @@ class MinecraftClone {
 
         // Joystick movement
         if (this.joystick) {
-            const data = this.joystick.getData();
-            if (data.vector) {
+            const data = this.joystick.data;
+            if (data && data.vector) {
                 moveVector.x = data.vector.x;
                 moveVector.z = -data.vector.y;
             }
