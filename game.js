@@ -1,5 +1,5 @@
 import * as THREE from 'three';
-import nipplejs from 'nipplejs';
+import 'https://unpkg.com/nipplejs@0.10.1/dist/nipplejs.js';
 
 class MinecraftClone {
     constructor() {
@@ -146,7 +146,7 @@ class MinecraftClone {
 
         // Mobile joystick
         if (window.innerWidth <= 768) {
-            this.joystick = nipplejs.create({
+            this.joystick = window.nipplejs.create({
                 zone: document.getElementById('joystick'),
                 mode: 'static',
                 position: { left: '60px', bottom: '60px' },
@@ -236,4 +236,3 @@ class MinecraftClone {
 
 // Initialize game
 new MinecraftClone();
-
